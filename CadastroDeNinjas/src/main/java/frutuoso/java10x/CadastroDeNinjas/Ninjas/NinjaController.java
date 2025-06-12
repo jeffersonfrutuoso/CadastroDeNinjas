@@ -30,8 +30,8 @@ public class NinjaController {
     }
 
     @PostMapping("/Criar")
-    public String Criando() {
-        return "criado com sucesso";
+    public NinjaModel Criando(@RequestBody NinjaModel ninja) {
+        return ninjaService.CriarNinjas(ninja);
     }
 
     @PutMapping("/Atualizar")
