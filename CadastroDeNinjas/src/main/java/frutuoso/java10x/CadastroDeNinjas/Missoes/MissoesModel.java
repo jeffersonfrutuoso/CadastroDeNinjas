@@ -1,4 +1,5 @@
 package frutuoso.java10x.CadastroDeNinjas.Missoes;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import frutuoso.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -25,5 +26,6 @@ public class MissoesModel {
     private String dificuldade;
 
     @OneToMany(mappedBy = "missoes_model", cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<NinjaModel> ninja_model;
 }
