@@ -30,7 +30,7 @@ public class NinjaController {
     }
 
     @PostMapping("/Criar")
-    public NinjaModel Criando(@RequestBody NinjaModel ninja) {
+    public NinjaDto Criando(@RequestBody NinjaDto ninja) {
         return ninjaService.CriarNinjas(ninja);
     }
 
