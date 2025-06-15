@@ -28,4 +28,12 @@ public class MissoesModel {
     @OneToMany(mappedBy = "missoes_model", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<NinjaModel> ninja_model;
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

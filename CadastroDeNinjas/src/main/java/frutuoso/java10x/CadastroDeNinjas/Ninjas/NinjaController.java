@@ -34,14 +34,16 @@ public class NinjaController {
         return ninjaService.CriarNinjas(ninja);
     }
 
-    @PutMapping("/Atualizar")
-    public String Atualizando() {
-        return "Atualizado com sucesso";
+    @PutMapping("/atualizar/{id}")
+    public NinjaModel AtualizarNinja(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado)
+    {
+        return ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
-    @DeleteMapping("/Deletar")
-    public String Deletar() {
-        return "Delatado com sucesso";
+    @DeleteMapping("/Deletar/{id}")
+    public void Deletar(@PathVariable Long id)
+    {
+        ninjaService.deletarNinjaPorId(id);
     }
 
 }
