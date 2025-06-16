@@ -1,42 +1,22 @@
 package frutuoso.java10x.CadastroDeNinjas.Ninjas;
 
 import frutuoso.java10x.CadastroDeNinjas.Missoes.MissoesModel;
-import jakarta.persistence.*;
 
-
-@Entity
-@Table(name = "tb_cadastro")
-
-public class NinjaModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "id")
+public class NinjaDto {
     private Long id;
-
-    @Column(name = "nome")
     private String nome;
-
-    @Column(unique = true)
     private String email;
-
-    @Column(name = "idade")
     private int idade;
-
-    @Column(name = "rank")
     private String rank;
-
-    @ManyToOne
-    @JoinColumn(name = "missoes_id")
     private MissoesModel missoes_model;
 
-    public NinjaModel() {
+    public NinjaDto() {
     }
 
-    public NinjaModel(Long id, String nome, String email, int idade, String rank, MissoesModel missoes_model) {
+    public NinjaDto(Long id, String email, String nome, int idade, String rank, MissoesModel missoes_model) {
         this.id = id;
-        this.nome = nome;
         this.email = email;
+        this.nome = nome;
         this.idade = idade;
         this.rank = rank;
         this.missoes_model = missoes_model;
