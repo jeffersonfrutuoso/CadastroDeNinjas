@@ -2,6 +2,7 @@ package frutuoso.java10x.CadastroDeNinjas.Ninjas;
 
 import frutuoso.java10x.CadastroDeNinjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
+import lombok.ToString;
 
 
 @Entity
