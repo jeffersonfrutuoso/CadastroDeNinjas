@@ -1,36 +1,17 @@
 package frutuoso.java10x.CadastroDeNinjas.Missoes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import frutuoso.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.util.List;
 
-@Entity
-@Table(name = "tb_missoes")
-
-public class MissoesModel {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-    @Column(name = "id")
+public class MissoesDto {
     private Long id;
-
-    @Column(name = "nome")
     private String nome;
-
-    @Column(name = "dificuldade")
     private String dificuldade;
-
-    @OneToMany(mappedBy = "missoes_model", cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<NinjaModel> ninja_model;
 
-    public MissoesModel() {
+    public MissoesDto() {
     }
 
-    public MissoesModel(Long id, String nome, String dificuldade, List<NinjaModel> ninja_model) {
+    public MissoesDto(Long id, String nome, String dificuldade, List<NinjaModel> ninja_model) {
         this.id = id;
         this.nome = nome;
         this.dificuldade = dificuldade;
